@@ -25,6 +25,7 @@ class TOTApp extends StatelessWidget {
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
       home: MainNavigationScreen(),
+      debugShowCheckedModeBanner: false, 
     );
   }
 }
@@ -61,6 +62,7 @@ class _MainNavigationScreenState extends State<MainNavigationScreen> {
         ],
         currentIndex: _selectedIndex,
         onTap: _onItemTapped,
+        
       ),
     );
   }
