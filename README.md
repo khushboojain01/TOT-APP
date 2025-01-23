@@ -60,7 +60,7 @@ tot-app/
 ```
 
 ## Screenshots
-![TOT](/Users/khushboo.j/Desktop/TOT_APP_/tot_app/TOT app results.png)
+![TOT](lib/image results)
 
 ## API Used
 [FreeTestAPI for Dogs](https://freetestapi.com/apis/dogs)
