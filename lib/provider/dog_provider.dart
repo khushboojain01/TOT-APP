@@ -1,7 +1,7 @@
 import 'package:flutter/foundation.dart';
 import 'package:tot_app/dog_model.dart';
-import 'package:tot_app/services/dog_api.dart';
-import 'package:tot_app/services/db_helper.dart';
+import 'package:tot_app/services/dog_api_service.dart';
+import 'package:tot_app/services/database_helper.dart';
 
 class DogProvider with ChangeNotifier {
   List<Dog> _dogs = [];
