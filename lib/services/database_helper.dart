@@ -38,10 +38,39 @@ class DatabaseHelper {
     ''');
   }
 
-  Future<int> saveDog(Dog dog) async {
-    final db = await instance.database;
-    return await db.insert('saved_dogs', dog.toMap());
+  Future<int?> saveDog(Dog dog) async {
+  final db = await instance.database;
+  final existingDog = await getDogByName(dog.name);
+  if (existingDog != null) {
+    // If the dog is already saved, return the existing ID
+    return existingDog.id;
   }
+  // If the dog is not saved, insert it into the database
+  return await db.insert('saved_dogs', dog.toMap());
+}
+
+  Future<Dog?> getDogByName(String name) async {
+  final db = await instance.database;
+  final maps = await db.query(
+    'saved_dogs',
+    where: 'name = ?',
+    whereArgs: [name],
+    limit: 1,
+  );
+
+   if (maps.isNotEmpty) {
+    return Dog(
+      id: maps.first['id'] as int,
+      name: maps.first['name'] as String,
+      breed: maps.first['breed'] as String,
+      imageUrl: maps.first['imageUrl'] as String?,
+      breedGroup: maps.first['breedGroup'] as String?,
+      description: maps.first['description'] as String?,
+    );
+  }
+
+  return null;
+}
 
   Future<List<Dog>> getSavedDogs() async {
     final db = await instance.database;

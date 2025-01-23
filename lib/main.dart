@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:tot_app/provider/dog_provider.dart';
 import 'package:tot_app/screens/home_screen.dart';
-import 'screens/search_screen.dart';
 import 'screens/saved_dogs_screen.dart';
 
 void main() {
@@ -15,6 +14,8 @@ void main() {
 }
 
 class TOTApp extends StatelessWidget {
+  const TOTApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -29,6 +30,8 @@ class TOTApp extends StatelessWidget {
 }
 
 class MainNavigationScreen extends StatefulWidget {
+  const MainNavigationScreen({super.key});
+
   @override
   _MainNavigationScreenState createState() => _MainNavigationScreenState();
 }
@@ -38,7 +41,6 @@ class _MainNavigationScreenState extends State<MainNavigationScreen> {
 
   final List<Widget> _screens = [
     HomeScreen(),
-    SearchScreen(),
     SavedDogsScreen(),
   ];
 
@@ -55,7 +57,6 @@ class _MainNavigationScreenState extends State<MainNavigationScreen> {
       bottomNavigationBar: BottomNavigationBar(
         items: const <BottomNavigationBarItem>[
           BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
-          BottomNavigationBarItem(icon: Icon(Icons.search), label: 'Search'),
           BottomNavigationBarItem(icon: Icon(Icons.save), label: 'Saved'),
         ],
         currentIndex: _selectedIndex,
