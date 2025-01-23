@@ -3,7 +3,7 @@ import 'package:provider/provider.dart';
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:tot_app/provider/dog_provider.dart';
 import 'package:tot_app/dog_model.dart';
-import 'detailpage.dart';
+import 'package:tot_app/screens/dog_detail_screen.dart';
 
 class SavedDogsScreen extends StatefulWidget {
   @override
