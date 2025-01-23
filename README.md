@@ -60,7 +60,7 @@ tot-app/
 ```
 
 ## Screenshots
-![TOT](lib/image results)
+![TOT](./lib/image%20results/TOT%20app%20results.png)
 
 ## API Used
 [FreeTestAPI for Dogs](https://freetestapi.com/apis/dogs)
